@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
+import { Link as RouterLink} from "react-router-dom";
+import Link from '@mui/material/Link';
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -59,31 +61,37 @@ const images = [
     url: "./imgs/categories/educacion.png",
     title: 'Educación',
     width: '30%',
+    to: "Campains",
   },
   {
     url: "./imgs/categories/salud.png",
     title: 'Salud',
     width: '30%',
+    to: "Campains",
   },
   {
     url: "./imgs/categories/animales.png",
     title: 'Animales',
     width: '30%',
+    to: "Campains",
   },
   {
     url: "./imgs/categories/familiar.png",
     title: 'Familiar',
     width: '30%',
+    to: "Campains",
   },
   {
     url: "./imgs/categories/medioA.png",
     title: 'Medio ambiente',
     width: '30%',
+    to: "Campains",
   },
   {
     url: "./imgs/categories/social.png"  ,
     title: 'Social',
     width: '30%',
+    to: "Campains",
   },
 ];
 
@@ -92,6 +100,7 @@ export default function Categories() {
     <Container component="section" sx={{ mt: 8, mb: 4 }}>
       <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>
         {images.map((image) => (
+          
           <ImageIconButton
             key={image.title}
             style={{
@@ -101,6 +110,7 @@ export default function Categories() {
               
             }}
           >
+            <Link component={RouterLink} to={`/${image.to}`} underline="none" color="inherit">
             <Box
               sx={{
                 position: 'absolute',
@@ -139,7 +149,9 @@ export default function Categories() {
                 <div className="imageMarked" />
               </Typography>
             </Box>
+            </Link>
           </ImageIconButton>
+          
         ))}
       </Box>
     </Container>

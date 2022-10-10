@@ -1,6 +1,8 @@
 import { Box } from "@mui/system";
 import { ThemeProvider } from "@mui/material";
 import Button from '@mui/material/Button';
+import { Link as RouterLink} from "react-router-dom";
+import Link from '@mui/material/Link';
 
 //import theme from "../styles";
 //import qrc from "../imgs/Qr/image-qr-code.png";
@@ -49,14 +51,19 @@ export const  QrModal = ({ onFin }) => {
             : "Scan the QR Code to use what you entered!"} */}
         </Box>
 
+        <Link component={RouterLink} to={`/instructions`} underline="none" color="inherit">
         <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-          >
+          > 
+          
             Ver paso a paso
+            
       </Button>
+      </Link>
+      
       <Button
             type="submit"
             fullWidth

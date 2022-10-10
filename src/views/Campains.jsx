@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { CardCampain } from '../components/CardCampain';
+import { Link as RouterLink} from "react-router-dom";
+import Link from '@mui/material/Link';
 
 
 
@@ -45,9 +47,13 @@ export const Campains = () => {
     <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>
     {campains.map((campain) => (
 
-        <CardCampain>
-
-        </CardCampain>
+        
+        
+          <Link component={RouterLink} to={`/infoCampain`} underline="none" color="inherit">
+            <CardCampain>
+          </CardCampain>
+          </Link>
+        
 
 
 
